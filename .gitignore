@@ -1,0 +1,9 @@
+# .gitignore
+
+# 构建输出目录
+build/
+
+# 编辑器临时文件
+*.swp
+*.bak
+

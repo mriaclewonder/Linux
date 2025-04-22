@@ -1,0 +1,46 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "type": "cppbuild",
+      "label": "C/C++: gcc 生成活动文件",
+      "command": "/usr/bin/gcc",
+      "args": [
+        "-fdiagnostics-color=always",
+        "-g",
+        "-I${workspaceFolder}/include", // 添加这一行来链接 include 文件夹
+        "${file}",
+        "-o",
+        "${workspaceFolder}/build/${fileBasenameNoExtension}" // 修改输出路径为 build 文件夹
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}/build" // 修改工作目录为 build 文件夹
+      },
+      "problemMatcher": ["$gcc"],
+      "group": "build",
+      "detail": "编译器: /usr/bin/gcc"
+    },
+    {
+      "type": "cppbuild",
+      "label": "C/C++: g++ 生成活动文件",
+      "command": "/usr/bin/g++",
+      "args": [
+        "-fdiagnostics-color=always",
+        "-g",
+        "-I${workspaceFolder}/include", // 添加这一行来链接 include 文件夹
+        "${file}",
+        "-o",
+        "${workspaceFolder}/build/${fileBasenameNoExtension}" // 修改输出路径为 build 文件夹
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}/build" // 修改工作目录为 build 文件夹
+      },
+      "problemMatcher": ["$gcc"],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "detail": "编译器: /usr/bin/g++"
+    }
+  ]
+}
